@@ -12,3 +12,69 @@
  *= require jquery.ui.all
  *= require_tree .
  */
+
+.height_20{
+  height:20px;
+}
+.height_40{
+  height:40px;
+}
+.height_60{
+  height:60px;
+}
+.height_80{
+  height:80px;
+}
+.height_100{
+  height:100px;
+}
+.bdr{
+    border: solid 1px #000;
+}
+.mT40 {margin-top: 40px;}
+
+.seperator{
+    border-top: solid 1px #7a5e45;
+}
+
+h2{
+    font-weight: normal;
+    font-size: 24px;
+    font-family: Arial;
+    color: #ca0809;
+}
+p, ul, li{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Arial;
+    color: #5b5b5b;
+}
+
+.first{
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Arial;
+    color: #fb8f26;
+    text-align: center;
+}
+.second{
+    font-weight: normal;
+    font-size: 14px;
+    font-family: Arial;
+    color: #ffb200;
+    text-align: center;
+}
+.third{
+    font-weight: normal;
+    font-size: 12px;
+    font-family: Arial;
+    color: #599513;
+    text-align: center;
+}
+.forth{
+    font-weight: normal;
+    font-size: 12px;
+    font-family: Arial;
+    color: #599513;
+    text-align: center;
+}
