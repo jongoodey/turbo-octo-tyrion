@@ -16,7 +16,7 @@ $(document).ready(function(){
                   //here you could also do some ajax and get the content for a "liker" instead of simply showing a hidden div in the page.
  
               } else {
-                  $("#container_notlike").show();
+                  $("#container_notlike").hide();
                   //and here you could get the content for a non liker in ajax...
               }
           });
