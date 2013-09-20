@@ -13,6 +13,9 @@
  *= require_tree .
  */
 
+.width_750{
+  width:750px;
+}
 .height_20{
   height:20px;
 }
