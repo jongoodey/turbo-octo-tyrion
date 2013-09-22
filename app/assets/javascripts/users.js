@@ -1,10 +1,4 @@
 $(document).ready(function(){
-
-  FB.Event.subscribe('edge.create',
-    function(response) {
-        alert('You liked the URL: ' + response);
-    }
-  );
  
     // FB.login(function(response) {
     //   if (response.session) {
