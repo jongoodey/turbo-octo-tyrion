@@ -1,69 +1,75 @@
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script>
+  FB.init({
+    appId  : '156550491219971',
+    status : true, 
+    cookie : true, 
+    xfbml  : true  
+  });
+</script>
 
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : 156550491219971, // App ID
-          channelUrl : 'https://freshfun.herokuapp.com/', // Channel File
-          status     : true, // check login status
-          cookie     : true, // enable cookies to allow the server to access the session
-          xfbml      : true  // parse XFBML
-        });
+<style type="text/css">
 
-        FB.getLoginStatus(function(response) {
-          var page_id = "156550491219971";
-          if (response && response.authResponse) {
-            var user_id = response.authResponse.userID;
-            var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
-            FB.Data.query(fql_query).wait(function(rows) {
+body {
+width:520px;
+margin:0; padding:0; border:0;
+font-family: verdana;
+background:url(repeat.png) repeat;
+margin-bottom:10px;
+}
+p, h1 {width:450px; margin-left:50px; color:#FFF;}
+p {font-size:11px;}
+
+#container_notlike, #container_like {
+    display:none
+}
+</style>
+
+<div id="container_notlike">
+YOU DONT LIKE
+</div>
+
+<div id="container_like">
+YOU LIKE
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    FB.login(function(response) {
+      if (response.session) {
+
+          var user_id = response.session.uid;
+          var page_id = "156550491219971"; //coca cola
+          var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
+          var the_query = FB.Data.query(fql_query);
+
+          the_query.wait(function(rows) {
+
               if (rows.length == 1 && rows[0].uid == user_id) {
-                console.log("LIKE");
-                $('#container_like').show();
+                  $("#container_like").show();
+
+                  //here you could also do some ajax and get the content for a "liker" instead of simply showing a hidden div in the page.
+
               } else {
-                console.log("NO LIKEY");
-                $('#container_notlike').show();
+                  $("#container_notlike").show();
+                  //and here you could get the content for a non liker in ajax...
               }
-            });
-          } else {
-            FB.login(function(response) {
-              if (response && response.authResponse) {
-                var user_id = response.authResponse.userID;
-                var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
-                FB.Data.query(fql_query).wait(function(rows) {
-                  if (rows.length == 1 && rows[0].uid == user_id) {
-                    console.log("LIKE");
-                    $('#container_like').show();
-                  } else {
-                    console.log("NO LIKEY");
-                    $('#container_notlike').show();
-                  }
-                });
-              } else {
-                console.log("NO LIKEY");
-                $('#container_notlike').show();
-              }
-            }, {scope: 'user_likes'});
-          }
-        });
-      };
+          });
 
-      // Load the SDK Asynchronously
-      (function(d){
-        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971";
-        d.getElementsByTagName('head')[0].appendChild(js);
-      }(document));
-    </script>
 
-    <div id="container_notlike">
-      YOU DON'T LIKE ME :(
-    </div>
+      } else {
+        // user is not logged in
+      }
+    });
 
-    <div id="container_like">
-      YOU LIKE ME :)
-    </div>
+});
+
+</script>
+
+
 
 <div class="container">
   <div class="row-fluid">
@@ -95,16 +101,7 @@
       </table>
 
       <br />
-      <div class="fb-like" data-href="https://www.facebook.com/TheLaLiga/app_156550491219971" data-width="450" data-show-faces="false" data-send="false"></div>
-      <br>
-
-      <%= link_to 'New User', new_user_path %>
-
-      <a target="_top"></a>
-      <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
-
-      
-    </div>
+    
   </div>
 
 
