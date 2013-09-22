@@ -43,6 +43,9 @@
           cookie : true,
           xfbml  : true 
         });
+        FB.Event.subscribe('edge.create', function(href, widget) {
+          alert('You just liked the page!');
+        });
       </script>
        
       <div id="container_notlike">
