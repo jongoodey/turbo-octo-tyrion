@@ -1,12 +1,15 @@
-<script src="http//connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 <script>
-  // Additional JS functions here
-  
+  FB.init({
+    appId  : '156550491219971',
+    status : true, 
+    cookie : true, 
+    xfbml  : true  
+  });
 </script>
 
 <style type="text/css">
-
 body {
 width:520px;
 margin:0; padding:0; border:0;
@@ -31,7 +34,6 @@ YOU LIKE
 </div>
 
 <script type="text/javascript">
-
 $(document).ready(function(){
 
     FB.login(function(response) {
@@ -62,9 +64,7 @@ $(document).ready(function(){
     });
 
 });
-
 </script>
-
 
 
 <div class="container">
@@ -97,9 +97,11 @@ $(document).ready(function(){
       </table>
 
       <br />
-    
-  </div>
 
+      <%= link_to 'New User', new_user_path %>
+
+      <a target="_top"></a>
+      <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
 
   <div class="row hidden-phone">
       <div class="span12">
