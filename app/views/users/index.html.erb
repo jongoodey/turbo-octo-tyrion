@@ -1,13 +1,67 @@
 <div id="fb-root"></div>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '156550491219971', // App ID
+          channelUrl : 'https://www.facebook.com/TheLaLiga/app_156550491219971', // Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+
+        FB.getLoginStatus(function(response) {
+          var page_id = "156550491219971";
+          if (response && response.authResponse) {
+            var user_id = response.authResponse.userID;
+            var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
+            FB.Data.query(fql_query).wait(function(rows) {
+              if (rows.length == 1 && rows[0].uid == user_id) {
+                console.log("LIKE");
+                $('#container_like').show();
+              } else {
+                console.log("NO LIKEY");
+                $('#container_notlike').show();
+              }
+            });
+          } else {
+            FB.login(function(response) {
+              if (response && response.authResponse) {
+                var user_id = response.authResponse.userID;
+                var fql_query = "SELECT uid FROM page_fan WHERE page_id = "+page_id+"and uid="+user_id;
+                FB.Data.query(fql_query).wait(function(rows) {
+                  if (rows.length == 1 && rows[0].uid == user_id) {
+                    console.log("LIKE");
+                    $('#container_like').show();
+                  } else {
+                    console.log("NO LIKEY");
+                    $('#container_notlike').show();
+                  }
+                });
+              } else {
+                console.log("NO LIKEY");
+                $('#container_notlike').show();
+              }
+            }, {scope: 'user_likes'});
+          }
+        });
+      };
+
+      // Load the SDK Asynchronously
+      (function(d){
+        var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971";
+        d.getElementsByTagName('head')[0].appendChild(js);
+      }(document));
+    </script>
+
+    <div id="container_notlike">
+      YOU DON'T LIKE ME :(
+    </div>
+
+    <div id="container_like">
+      YOU LIKE ME :)
+    </div>
 
 <div class="container">
   <div class="row-fluid">
@@ -49,30 +103,7 @@
 
       <div id="fb-root"></div>
       <script src="http://connect.facebook.net/en_US/all.js"></script>
-      <script>
-          FB.init({
-              appId  : '156550491219971',
-              status : true, // check login status
-              cookie : true, // enable cookies to allow the server to access the session
-              xfbml  : true, // parse XFBML
-              channelUrl : 'https://www.facebook.com/TheLaLiga/app_156550491219971', // channel.html file
-              oauth  : true // enable OAuth 2.0
-          });
-      </script>
-
-      <script>
-        FB.Event.subscribe ('edge.create', function (response) {
-          alert ('You just liked' + response);
-        });
-      </script>
-       
-      <div id="container_notlike">
-      SHOW NOTHING
-      </div>
-       
-      <div id="container_like">
-      SHOW COMPETITION FORM
-      </div>
+      
     </div>
   </div>
 
