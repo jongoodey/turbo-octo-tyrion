@@ -7,44 +7,10 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-like" data-href="https://www.facebook.com/TheLaLiga/app_156550491219971" data-width="450" data-show-faces="false" data-send="false"></div>
 
 
-<div class="container">
-  <div class="row-fluid">
-    <div class="span12">
-      <h1>Listing users</h1>
-
-      <table>
-        <tr>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Email</th>
-          <th>Message</th>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.first_name %></td>
-          <td><%= user.last_name %></td>
-          <td><%= user.email %></td>
-          <td><%= user.message %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-      </table>
-
-      <br />
-
-      <%= link_to 'New User', new_user_path %>
-
-      <a target="_top"></a>
-      <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
+  <a target="_top"></a>
+  <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
 
   <div class="row hidden-phone">
       <div class="span12">
@@ -56,63 +22,54 @@
         <%= image_tag('/assets/like_gate_mobile.jpg') %>
       </div>
   </div>
+  <div class="row mT20">
+    <div class="span4">
+    </div>
+    <div class="span8">
+      <div class="fb-like" data-href="https://www.facebook.com/TheLaLiga/app_156550491219971" data-width="450" data-show-faces="false" data-send="false"></div>
+    </div>
+  </div>
 
   <div class="row hidden-phone">
-      <div class="span12">
-        <h2 class="width_750">To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h2>
+      <div class="span9">
+        <h4 class="">To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h4>
+      </div>
+      <div class="span3">
       </div>
   </div>
-  <div class="row visible-phone">
-      <div class="span12">
-        <h6>To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h6>
-      </div>
-  </div>
-
-  <div class="row hidden-phone width_750">
-    <div class="span6">
+  
+  <div class="row-fluid">
+    <div class="span9">
       <form action="send_email.php" id="image_mail" method="post" enctype="multipart/form-data">
           <label for="name">First Name*</label>
           <input type="text" name="name" id="name" class="span8 required_send">
-          <span class="val">*Required First Name</span>
+          <!-- <span class="val">*Required First Name</span> -->
 
           <label for="last_name">Last Name*</label>
           <input type="text" name="lname" id="lname" class="span8">
-          <span class="val">*Required Last Name</span>
+          <!-- <span class="val">*Required Last Name</span> -->
 
           <label for="name">Email*</label>
           <input type="text" name="email" id="email" class="span8 required_send">
-          <span class="val">*Required Email</span>
+          <!-- <span class="val">*Required Email</span> -->
 
           <label for="name">Phone*</label>
           <input type="text" name="phone" id="phone" class="span8">
-    </div>
-    <div class="span1">
-    </div>
-    <div class="span5">
-      <img src="assets/images/delicious.jpg">
-      <div class="span12 mT40">
-        <input id="submit_form" type="submit" value="Submit Application" class="span6 btn btn-success">
-        <div class="span1"></div>
-        <img id="submit_form_wait" src="assets/images/ajax-loader.gif"/>
-      </div>
-      <input style="display:none" type="submit" value="Submit Application" id="submit" class="span6 btn btn-large btn-success submit"/>
+
+          <label for="name">Message*</label>
+          <textarea rows="3" name="message" id="message" class="span8"></textarea>
+          <input id="submit_form" type="submit" value="Submit Application" class="span6 btn mT20 btn-success">
       </form>
     </div>
   </div>
-  <div class="row visible-phone">
-      <div class="span12">
+  <div class="row-fluid">
+      <div class="span9">
         <h6>To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h6>
       </div>
   </div>
 
-  <div class="row hidden-phone width_750">
-      <div class="span12 seperator">
-      </div>
-  </div>
-      
-  
-  <div class="row-fluid width_750">
-      <div class="span12">
+  <div class="row-fluid">
+      <div class="span9">
           <p>T&amp;Cs: The following rules apply to Tefal's Fresh Week Facebook giveaway that runs from Monday 5 May to Sunday 19 May (entries accepted until 23:59).</p>
           <p>Details of the giveaway:
               <ul>
@@ -124,13 +81,13 @@
           <p>Eligibility</p>
       </div>
   </div>
-  <div class="row-fluid readmore_button ">
+<!--   <div class="row-fluid readmore_button ">
       <div class="span12 width_750">
           <p>read more</p>
       </div>
-  </div> 
+  </div>  -->
   <div class="row">
-       <div class="span12 width_750">
+       <div class="span9">
            <h2><b>Terms &amp; Conditions</b></h2>
            <p>No purchase necessary, applicants must be aged 18  &amp; over &amp; resident in the UK.</p>
            <p>There is no cash alternative to the prizes on offer. The successful winner will be selected at random.</p>
@@ -162,12 +119,12 @@ We take the privacy of your personal information very seriously and will only us
                <li>in relation to existing or future legal proceedings, </li>
                <li>for the purpose of preventing fraud/loss, for example to fraud prevention agencies. </li>
            </ul>
-           <p class="width_750"><b>Informing you about our products and services</b></p>
-           <p class="width_750">We may use your information to contact you with news on Groupe SEB products and services (provided by us, our other group companies or our carefully selected business partners) which may be of interest to you and occasionally for market research purposes.
+           <p class=""><b>Informing you about our products and services</b></p>
+           <p class="">We may use your information to contact you with news on Groupe SEB products and services (provided by us, our other group companies or our carefully selected business partners) which may be of interest to you and occasionally for market research purposes.
 We and these other parties may contact you by post and phone and, if you give us your prior agreement to do so, by email, SMS and other electronic means.
 
 You can opt out of receiving marketing communications from us on our products and services by ticking the appropriate box (if providing your information on this website) or at any time by calling us on; 0845 602 1454, or writing to us at Groupe SEB UK Ltd, Customer Relations Department, Riverside House, Riverside Walk, Berkshire SL4 1NA.</p>
-           <p class="width_750">We will only send you marketing communications by email or other electronic means if you give us your agreement to do so. For example, we may inform you when inviting you to provide your email address that by providing your email address you will be indicating your agreement to receive marketing emails. If you give us your agreement and subsequently wish to opt out you can do so by clicking the unsubscribe link which we include on all our marketing emails or you can contact us at any time at the address or telephone number above.</p>
+           <p class="">We will only send you marketing communications by email or other electronic means if you give us your agreement to do so. For example, we may inform you when inviting you to provide your email address that by providing your email address you will be indicating your agreement to receive marketing emails. If you give us your agreement and subsequently wish to opt out you can do so by clicking the unsubscribe link which we include on all our marketing emails or you can contact us at any time at the address or telephone number above.</p>
        </div>
    </div>     
 </div>
