@@ -17,30 +17,6 @@ window.fbAsyncInit = function() {
     console.log(response);
   });
 
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-    console.log('The status of the session is: ' + response.status);
-  });
-
-  FB.ui(
-  {
-   method: 'feed',
-   name: 'The Facebook SDK for Javascript',
-   caption: 'Bringing Facebook to the desktop and mobile web',
-   description: (
-      'A small JavaScript library that allows you to harness ' +
-      'the power of Facebook, bringing the user\'s identity, ' +
-      'social graph and distribution power to your site.'
-   ),
-   link: 'https://developers.facebook.com/docs/reference/javascript/',
-   picture: 'http://www.fbrell.com/public/f8.jpg'
-  },
-  function(response) {
-    if (response && response.post_id) {
-      alert('Post was published.');
-    } else {
-      alert('Post was not published.');
-    }
-  }
 );
 
 (function(d, s, id) {
@@ -51,8 +27,6 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-
 
 
   <a target="_top"></a>
@@ -60,12 +34,12 @@ window.fbAsyncInit = function() {
 
   <div class="row hidden-phone">
       <div class="span12">
-        <%= image_tag('/assets/like_gate.jpg', :class => 'width_750') %>
+        <%= image_tag('/assets/main_header.jpg', :class => 'width_750') %>
       </div>
   </div>
   <div class="row visible-phone">
       <div class="span12">
-        <%= image_tag('/assets/like_gate_mobile.jpg') %>
+        <%= image_tag('/assets/main_header.jpg') %>
       </div>
   </div>
   <div class="row mT20">
