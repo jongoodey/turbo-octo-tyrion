@@ -1,4 +1,4 @@
-$(".submission").html("<%= escape_javascript(render("users")) %>");
-$('.submission').slideDown('slow', function(){
-	$(this).append("<p class='f-right segoe'>Thank you for submitting your comment it should appear on the relevant profile within 48 hours</p>");
+$('.before_submit').slideUp('slow', function(){
+	$(this).next().slideDown('slow', function(){
+	});
 });
