@@ -1,7 +1,4 @@
 $(document).ready(function(){
-  if ($('#u_0_o').val('Like')) {
-    console.log('liked');
-  }else{
-    console.log('worked')
-  };
+  console.log($('#u_0_o').val());
+  console.log($('#u_0_r').val());
 });
