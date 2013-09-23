@@ -1,11 +1,10 @@
-<script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
 <script>
 window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
       appId      : '156550491219971',                        // App ID from the app dashboard
-      channelUrl : 'https://freshfun.herokuapp.com/channel.html', // Channel file for x-domain comms
+      // channelUrl : 'https://freshfun.herokuapp.com/channel.html', // Channel file for x-domain comms
       status     : true,                                 // Check Facebook Login status
       xfbml      : true                                  // Look for social plugins on the page
     });
@@ -21,6 +20,28 @@ window.fbAsyncInit = function() {
     console.log('The status of the session is: ' + response.status);
   });
 
+  FB.ui(
+  {
+   method: 'feed',
+   name: 'The Facebook SDK for Javascript',
+   caption: 'Bringing Facebook to the desktop and mobile web',
+   description: (
+      'A small JavaScript library that allows you to harness ' +
+      'the power of Facebook, bringing the user\'s identity, ' +
+      'social graph and distribution power to your site.'
+   ),
+   link: 'https://developers.facebook.com/docs/reference/javascript/',
+   picture: 'http://www.fbrell.com/public/f8.jpg'
+  },
+  function(response) {
+    if (response && response.post_id) {
+      alert('Post was published.');
+    } else {
+      alert('Post was not published.');
+    }
+  }
+);
+
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -29,6 +50,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
+<script src="http://connect.facebook.net/en_US/all.js"></script>
 
 
 
