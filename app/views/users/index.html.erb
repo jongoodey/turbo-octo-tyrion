@@ -32,13 +32,13 @@ window.fbAsyncInit = function() {
   <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
 
   <div class="row-fluid before_submit">
-      <div class="span9">
+      <div class="span10">
         <%= image_tag('/assets/main_header.jpg', :class => 'width_750') %>
       </div>
   </div>
 
   <div class="row-fluid after_submit" style="display:none">
-      <div class="span9">
+      <div class="span10">
         <%= image_tag('/assets/thank_you1.jpg', :class => 'width_750') %>
       </div>
   </div>
@@ -51,7 +51,7 @@ window.fbAsyncInit = function() {
     </div>
   </div>
 
-  <div class="row hidden-phone">
+  <div class="row before_submit hidden-phone">
       <div class="span9">
         <h4 class="">To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h4>
       </div>
@@ -59,7 +59,7 @@ window.fbAsyncInit = function() {
       </div>
   </div>
   <%= form_for(@user, :remote => true) do |f| %> 
-  <div class="row-fluid">
+  <div class="row-fluid before_submit">
     <div class="span10">
       <form action="send_email.php" id="image_mail" method="post" enctype="multipart/form-data">
           <label for="name">First Name*</label>
@@ -139,7 +139,7 @@ You can opt out of receiving marketing communications from us on our products an
     <h2>Subscribe to our mailing list</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
-    <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
 </label>
     <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
