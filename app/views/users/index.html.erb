@@ -27,7 +27,7 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
-
+<div class="submission"></div>
 
   <a target="_top"></a>
   <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
@@ -57,33 +57,31 @@ window.fbAsyncInit = function() {
       <div class="span3">
       </div>
   </div>
-  
+  <%= form_for(@user, :remote => true) do |f| %> 
   <div class="row-fluid">
     <div class="span10">
       <form action="send_email.php" id="image_mail" method="post" enctype="multipart/form-data">
           <label for="name">First Name*</label>
-          <input type="text" name="name" id="name" class="span8 required_send">
-          <!-- <span class="val">*Required First Name</span> -->
+          <%= f.text_field :first_name, :class => "span8" %>
 
           <label for="last_name">Last Name*</label>
-          <input type="text" name="lname" id="lname" class="span8">
-          <!-- <span class="val">*Required Last Name</span> -->
+          <%= f.text_field :last_name, :class => "span8" %>
 
           <label for="name">Email*</label>
-          <input type="text" name="email" id="email" class="span8 required_send">
-          <!-- <span class="val">*Required Email</span> -->
+          <%= f.text_field :email, :class => "span8" %>
 
           <label for="name">Phone*</label>
           <input type="text" name="phone" id="phone" class="span8">
 
           <label for="name">Message*</label>
-          <textarea rows="3" name="message" id="message" class="span8"></textarea><br>
+          <%= f.text_area :message, :class => "span8", :rows => "5" %>
+          <br>
           <label for="name" class="span7">Untick to opt out of our newsletter</label>
           <input type="checkbox" id="optout" name="optout" checked="checked" value="optout" class="span1">
-          <!-- <input id="submit_form" type="submit" value="Submit Application" class="span6 btn mT20 span8 btn-success"> -->
-      </form>
+          <%= f.submit "Submit Application", :class => "span6 btn mT20 span8 btn-success" %>
     </div>
   </div>
+  <% end %>
   <div class="row-fluid">
       <div class="span9">
         <h6>To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h6>
