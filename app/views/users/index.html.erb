@@ -1,33 +1,3 @@
-<div id="fb-root"></div>
-<script>
-window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '156550491219971',                        // App ID from the app dashboard
-      channelUrl : 'https://freshfun.herokuapp.com/channel.html', // Channel file for x-domain comms
-      status     : true,                                 // Check Facebook Login status
-      xfbml      : true                                  // Look for social plugins on the page
-    });
-
-    // Additional initialization code such as adding Event Listeners goes here
-  };
-
-  FB.Event.subscribe('edge.create', function(response) {
-    location.href = 'http://freshfun.herokuapp.com/new';
-    console.log(response);
-  });
-
-);
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
   <a target="_top"></a>
   <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
 
@@ -120,7 +90,7 @@ We take the privacy of your personal information very seriously and will only us
                <li>for the purpose of preventing fraud/loss, for example to fraud prevention agencies. </li>
            </ul>
            <p class=""><b>Informing you about our products and services</b></p>
-           <p class="">We may use your information to contact you with news on Groupe SEB products and services (provided by us, our other group companies or our carefully selected business partners) which may be of interest to you and occasionally for market research purposes.
+           <p class="as">We may use your information to contact you with news on Groupe SEB products and services (provided by us, our other group companies or our carefully selected business partners) which may be of interest to you and occasionally for market research purposes.
 We and these other parties may contact you by post and phone and, if you give us your prior agreement to do so, by email, SMS and other electronic means.
 
 You can opt out of receiving marketing communications from us on our products and services by ticking the appropriate box (if providing your information on this website) or at any time by calling us on; 0845 602 1454, or writing to us at Groupe SEB UK Ltd, Customer Relations Department, Riverside House, Riverside Walk, Berkshire SL4 1NA.</p>
@@ -146,7 +116,7 @@ You can opt out of receiving marketing communications from us on our products an
     <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
 </div>
 <div class="mc-field-group">
-    <label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+    <label for="mce-LNAME">Last Name<span class="asterisk">*</span>
 </label>
     <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
 </div>
