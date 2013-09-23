@@ -4,7 +4,7 @@ window.fbAsyncInit = function() {
     // init the FB JS SDK
     FB.init({
       appId      : '156550491219971',                        // App ID from the app dashboard
-      // channelUrl : 'https://freshfun.herokuapp.com/channel.html', // Channel file for x-domain comms
+      channelUrl : 'https://freshfun.herokuapp.com/channel.html', // Channel file for x-domain comms
       status     : true,                                 // Check Facebook Login status
       xfbml      : true                                  // Look for social plugins on the page
     });
@@ -13,6 +13,7 @@ window.fbAsyncInit = function() {
   };
 
   FB.Event.subscribe('edge.create', function(response) {
+    location.href = 'http://freshfun.herokuapp.com/new';
     console.log(response);
   });
 
@@ -42,11 +43,17 @@ window.fbAsyncInit = function() {
   }
 );
 
-(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
-
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=156550491219971";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
 <script src="http://connect.facebook.net/en_US/all.js"></script>
-<div class="fb-like" data-href="http://o-e.us/e.php?o=na8l" data-send="false" data-width="450" data-show-faces="false"></div>
+
+
 
   <a target="_top"></a>
   <a href="https://www.facebook.com/dialog/pagetab?app_id=156550491219971&amp;next=https://freshfun.herokuapp.com/">.</a>
