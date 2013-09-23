@@ -1,3 +1,3 @@
-$(window).load(function(){
-  console.log($('button').next().text());
+$(document).ready(function(){
+  console.log($('.fb-like').html());
 });
