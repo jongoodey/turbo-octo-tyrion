@@ -13,30 +13,10 @@
  *= require_tree .
  */
 
-.bdr{
-    border: solid 1px #000;
-}
+.bdr{ border: solid 1px #000;}
 .mT20 {margin-top: 20px;}
 .mT40 {margin-top: 40px;}
-
-.seperator{
-    border-top: solid 1px #7a5e45;
+.seperator{border-top: solid 1px #7a5e45;
 }
 #mL2 { margin-left: 2px;}
 
-h2{
-    font-weight: normal;
-    font-size: 24px;
-    font-family: Arial;
-    color: #ca0809;
-}
-h6{
-	color: #ca0809;
-	font-family: Arial;
-}
-p, ul, li{
-    font-weight: normal;
-    font-size: 14px;
-    font-family: Arial;
-    color: #5b5b5b;
-}
