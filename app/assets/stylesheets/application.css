@@ -13,24 +13,6 @@
  *= require_tree .
  */
 
-.width_750{
-  width:750px;
-}
-.height_20{
-  height:20px;
-}
-.height_40{
-  height:40px;
-}
-.height_60{
-  height:60px;
-}
-.height_80{
-  height:80px;
-}
-.height_100{
-  height:100px;
-}
 .bdr{
     border: solid 1px #000;
 }
@@ -40,6 +22,7 @@
 .seperator{
     border-top: solid 1px #7a5e45;
 }
+#mL2 { margin-left: 2px;}
 
 h2{
     font-weight: normal;
@@ -47,38 +30,13 @@ h2{
     font-family: Arial;
     color: #ca0809;
 }
+h6{
+	color: #ca0809;
+	font-family: Arial;
+}
 p, ul, li{
     font-weight: normal;
     font-size: 14px;
     font-family: Arial;
     color: #5b5b5b;
-}
-
-.first{
-    font-weight: bold;
-    font-size: 14px;
-    font-family: Arial;
-    color: #fb8f26;
-    text-align: center;
-}
-.second{
-    font-weight: normal;
-    font-size: 14px;
-    font-family: Arial;
-    color: #ffb200;
-    text-align: center;
-}
-.third{
-    font-weight: normal;
-    font-size: 12px;
-    font-family: Arial;
-    color: #599513;
-    text-align: center;
-}
-.forth{
-    font-weight: normal;
-    font-size: 12px;
-    font-family: Arial;
-    color: #599513;
-    text-align: center;
 }

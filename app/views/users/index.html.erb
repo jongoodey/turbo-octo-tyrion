@@ -61,34 +61,31 @@ window.fbAsyncInit = function() {
   <%= form_for(@user, :remote => true) do |f| %> 
   <div class="row-fluid before_submit">
     <div class="span10">
-      <form action="send_email.php" id="image_mail" method="post" enctype="multipart/form-data">
-          <label for="name">First Name*</label>
-          <%= f.text_field :first_name, :class => "span8" %>
+      <label for="name">First Name*</label>
+      <%= f.text_field :first_name, :class => "span8" %>
 
-          <label for="last_name">Last Name*</label>
-          <%= f.text_field :last_name, :class => "span8" %>
+      <label for="last_name">Last Name*</label>
+      <%= f.text_field :last_name, :class => "span8" %>
 
-          <label for="name">Email*</label>
-          <%= f.text_field :email, :class => "span8" %>
+      <label for="name">Email*</label>
+      <%= f.text_field :email, :class => "span8" %>
 
-          <label for="name">Phone*</label>
-          <input type="text" name="phone" id="phone" class="span8">
-
-          <label for="name">Message*</label>
-          <%= f.text_area :message, :class => "span8", :rows => "5" %>
-          <br>
-          <label for="name" class="span7">Untick to opt out of our newsletter</label>
-          <input type="checkbox" id="optout" name="optout" checked="checked" value="optout" class="span1">
-          <%= f.submit "Submit Application", :class => "span6 btn mT20 span8 btn-success" %>
+      <label for="name">Phone</label>
+      <input type="text" name="phone" id="phone" class="span8">
+      <p class="span8" id="mL2">To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</p>
+      <%= f.text_area :message, :class => "span8", :rows => "5" %>
+      <br>
+      <label for="name" class="span7">Untick to opt out of our newsletter</label>
+      <input type="checkbox" id="optout" name="optout" checked="checked" value="optout" class="span1">
+      <%= f.submit "Submit Application", :class => "span6 btn mT20 span8 btn-success" %>
     </div>
   </div>
   <% end %>
   <div class="row-fluid">
       <div class="span9">
-        <h6>To enter our competition please tell us which is your child’s favourite vegetable and why, for your chance to WIN a Fresh Express!</h6>
+        
       </div>
   </div>
-
 
   <div class="row">
        <div class="span9">
@@ -96,7 +93,6 @@ window.fbAsyncInit = function() {
            <p>No purchase necessary, applicants must be aged 18  &amp; over &amp; resident in the UK.</p>
            <p>There is no cash alternative to the prizes on offer. The successful winner will be selected at random.</p>
            <p>Competition entry is available from 23rd of September 2013 and closes midnight on 4th of October 2013.</p>
-           <br>
            <h6><b>Privacy Policy</b></h6>
            <p>This privacy policy applies to personal information we hold about individuals.
 We take the privacy of your personal information very seriously and will only use your personal information in accordance with the current data protection law in the UK and this privacy policy.</p>
@@ -135,16 +131,17 @@ You can opt out of receiving marketing communications from us on our products an
 
 <!-- Begin MailChimp Signup Form -->
 <div style="display:none" id="mc_embed_signup">
+<!-- <div id="mc_embed_signup"> -->
 <form action="http://tefal.us7.list-manage2.com/subscribe/post?u=f1e1f9734ffb1dc33f4668b72&amp;id=b4dc99ba35" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" >
     <h2>Subscribe to our mailing list</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
-    <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+    <label for="mce-EMAIL">Email Address<span class="asterisk">*</span>
 </label>
     <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 </div>
 <div class="mc-field-group">
-    <label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+    <label for="mce-FNAME">First Name<span class="asterisk">*</span>
 </label>
     <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
 </div>

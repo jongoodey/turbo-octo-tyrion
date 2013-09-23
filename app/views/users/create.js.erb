@@ -2,3 +2,16 @@ $('.before_submit').slideUp(1000, function(){
 	$(this).next().slideDown(1000, function(){
 	});
 });
+
+$.ajax({
+	type : 'POST',
+	cache: false,
+	url  : 'http://tefal.us7.list-manage2.com/subscribe/post?u=f1e1f9734ffb1dc33f4668b72&amp;id=b4dc99ba35',
+	data : $('form#mc-embedded-subscribe-form').serialize(),
+	success: imageSubmitter()
+	
+})
+
+$('#user_first_name').keyup(function(){
+	$(this).val() = $('#mce-EMAIL').val();
+}
